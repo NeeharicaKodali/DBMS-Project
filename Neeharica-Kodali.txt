@@ -1,0 +1,1165 @@
+/*
+-------------------
+-------------------
+-------------------
+SECTION ONE
+-------------------
+-------------------
+-------------------
+*/
+/* 
+
+TEAM INFORMATION 
+-----------------
+Neeharica Kodali
+NUID - 94697698
+-----------------
+
+*/
+
+/*
+-------------------
+-------------------
+-------------------
+SECTION TWO
+-------------------
+-------------------
+-------------------
+*/
+/* SQL QUERIES FOR CREATING TABLES AND POPULATING THEM WITH DATA */
+
+
+Create table person (
+         Id varchar(5),
+         Pername varchar(30),
+         beginyear date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+         endyear date check (endyear > 01/01/1800 and endyear < 01/01/2100), 
+         DOB date check (DOB > 01/01/1800 and DOB < 01/01/2100), 
+         industry varchar(10),
+         primary key (Id)
+);      
+
+insert into person values ('P1', 'Ritesh', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie');
+insert into person values ('P2', 'Navya', '1985/11/10', '1987/06/17', '1986/01/11', 'Literature');
+insert into person values ('P3', 'Kavya', '1965/12/08', '1966/06/26', '1945/06/15', 'Movie');
+insert into person values ('P4', 'Kaushik', '1965/12/08', '1966/06/26', '1945/06/15', 'Movie');
+insert into person values ('P5', 'Neehu', '1981/01/10', '1982/06/17', '1965/01/11', 'Movie');
+insert into person values ('P6', 'Vikky', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie');
+insert into person values ('P7', 'Vikram', '1985/11/10', '1987/06/17', '1986/01/11', 'Literature');
+insert into person values ('P8', 'Kavya', '1965/12/08', '1966/06/26', '1945/06/15', 'Movie');
+insert into person values ('P9', 'Kaushik', '1965/12/08', '1966/06/26', '1945/06/15', 'Movie');
+insert into person values ('P10', 'Vikky', '1981/01/10', '1982/06/17', '1965/01/11', 'Movie');
+
+
+
+Create table Producer (
+          ID varchar(5),
+          Pname varchar(30),
+          beginyear date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+          endyear date check (endyear > 01/01/1800 and endyear < 01/01/2100), 
+          DOB date check (DOB > 01/01/1800 and DOB < 01/01/2100), 
+          industry varchar(30),
+          career_earnings varchar(15),
+          tot_mov_prd int(3),  
+          primary key (ID) 
+);   
+
+insert into Producer values ( 'P0001', 'Neeharica', '1980/01/01', '1982/06/05', '1960/06/28', 'Movie', '50000', '10');
+insert into Producer values ( 'P0002', 'Mona', '1981/01/01', '1982/06/05', '1965/01/11', 'Movie', '100000', '5');
+insert into Producer values ( 'P0003', 'Lenin', '1982/01/01', '1983/06/05', '1968/06/15', 'Literature', '75000', '10'); 
+insert into Producer values ( 'P0004', 'Bhagi', '1983/01/01', '1984/06/05', '1965/05/08', 'Movie', '1000000', '15');
+insert into Producer values ( 'P0005', 'Ch', '1984/01/01', '1985/06/05', '1964/11/02', 'Literature', '250000', '18');
+insert into Producer values ( 'P0006', 'Akila', '1980/01/01', '1982/06/05', '1960/06/28', 'Movie', '50000', '10'); 
+insert into Producer values ( 'P0007', 'Vishal', '1981/01/01', '1982/06/05', '1965/01/11', 'Movie', '100000', '5');
+insert into Producer values ( 'P0008', 'Naresh', '1982/01/01', '1983/06/05', '1968/06/15', 'Literature', '75000', '10'); 
+insert into Producer values ( 'P0009', 'Chethan', '1983/01/01', '1984/06/05', '1965/05/08', 'Movie', '1000000', '15');
+insert into Producer values ( 'P0010', 'Suma', '1984/01/01', '1985/06/05', '1964/11/02', 'Literature', '250000', '18');  
+
+
+
+create table Director( 
+          ID varchar(5), 
+          Dname varchar(30), 
+          begindt date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+          enddt date check (endyear > 01/01/1800 and endyear < 01/01/2100), 
+          DOB date check (DOB > 01/01/1800 and DOB < 01/01/2100), 
+          industry varchar(10), 
+          career_earnings varchar(15), 
+          tot_mov_drctd varchar(3), 
+          Primary Key (ID) 
+); 
+
+insert into Director values ( 'D0001', 'Ritesh', '1980/01/05', '1982/06/16', '1960/06/28', 'Movie', '500000', '11') ;
+insert into Director values ( 'D0002', 'Neehu', '1981/01/10', '1982/06/17', '1965/01/11', 'Movie', '150000', '15') ;
+insert into director values ( 'D0003', 'Kaushik', '1982/01/08', '1983/06/26', '1968/06/15', 'Literature', '175000', '21'); 
+insert into Director values ( 'D0004', 'Kushal', '1983/01/07', '1984/06/25', '1965/05/08', 'Movie', '1550000', '25');
+insert into Director values ( 'D0005', 'Navya', '1984/01/06', '1985/06/15', '1964/11/02', 'Literature', '350000', '17');
+insert into Director values ( 'D0006', 'Sidhu', '1980/01/05', '1982/06/16', '1960/06/28', 'Movie', '500000', '11') ;
+insert into Director values ( 'D0007', 'Bhuvana', '1981/01/10', '1982/06/17', '1965/01/11', 'Movie', '150000', '15') ;
+insert into director values ( 'D0008', 'Bala', '1982/01/08', '1983/06/26', '1968/06/15', 'Literature', '175000', '21'); 
+insert into Director values ( 'D0009', 'Kavya', '1983/01/07', '1984/06/25', '1965/05/08', 'Movie', '1550000', '25');
+insert into Director values ( 'D0010', 'Kittu', '1984/01/06', '1985/06/15', '1964/11/02', 'Literature', '350000', '17'); 
+
+Create table Movie (
+         movie_id varchar(5), 
+         title varchar(30), 
+         Myear year(4), 
+         rating varchar(1), 
+         prd_id varchar(5), 
+         dir_id varchar(5), 
+         primary key (movie_id), 
+         FOREIGN key (prd_id) REFERENCES producer(ID) on delete set null, 
+         FOREIGN key (dir_id) REFERENCES director(ID) on delete set null 
+);
+
+insert into movie values('M1', 'Happy',1990, '4','P0001','D0002');
+insert into movie values('M2', 'Bommarillu',1992, '5','P0002','D0004');
+insert into movie values('M3', 'Dhee',2000, '5','P0001','D0003');
+insert into movie values('M4', 'HappyDays',2008, '4','P0003','D0004');
+insert into movie values('M5', 'Life is Beautiful',2007, '3','P0001','D0002');
+insert into movie values('M6', 'Lion',1990, '4','P0006','D0002');
+insert into movie values('M7', 'Arya',1992, '5','P0007','D0004');
+insert into movie values('M8', 'Chirutha',2000, '5','P0008','D0007') ;
+insert into movie values('M9', 'Simha',2008, '4','P0003','D0009');
+insert into movie values('M10', 'Nuvvu',2007, '3','P0004','D0002');
+INSERT INTO movie VALUES ('M11', 'Harry Potter', '2001', '5', NULL, 'D0001');
+INSERT INTO movie VALUES ('M12', 'Guru', '2017', '4', NULL, NULL);
+
+
+create table Actor( 
+          ID varchar(5), 
+          Aname varchar(30), 
+          begindt date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+          enddt date check (endyear > 01/01/1800 and endyear < 01/01/2100), 
+          DOB date check (DOB > 01/01/1800 and DOB < 01/01/2100), 
+          industry varchar(10), 
+          career_earnings int(15), 
+          tot_mov_actd varchar(3), 
+          Primary Key (ID) 
+); 
+
+insert into actor values ( 'A0001', 'Vinayak', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie', '50000', '21') ;
+insert into actor values ( 'A0002', 'Siddu', '1985/11/10', '1987/06/17', '1968/01/11', 'Movie', '150500', '13') ;
+insert into actor values ( 'A0003', 'Shashank', '1965/12/08', '1966/06/26', '1945/06/15', 'Literature', '15000', '21'); 
+insert into actor values ( 'A0004', 'Kuchib', '1973/11/07', '1975/06/25', '1955/05/08', 'Movie', '155000', '27');
+insert into actor values ( 'A0005', 'Anil', '1964/08/06', '1965/06/15', '1940/11/02', 'Literature', '450000', '18');
+insert into actor values ( 'A0006', 'Rahul', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie', '50000', '21');
+insert into actor values ( 'A0007', 'Kalyan', '1985/11/10', '1987/06/17', '1968/01/11', 'Movie', '150500', '13');
+insert into actor values ( 'A0008', 'Tarun', '1965/12/08', '1966/06/26', '1945/06/15', 'Literature', '15000', '21'); 
+insert into actor values ( 'A0009', 'Shiva', '1973/11/07', '1975/06/25', '1955/05/08', 'Movie', '155000', '27');
+insert into actor values ( 'A0010', 'Laxman', '1964/08/06', '1965/06/15', '1940/11/02', 'Literature', '450000', '18'); 
+
+
+CREATE table Awards( 
+           award_name varchar(15), 
+           category varchar(15) 
+); 
+
+insert into awards values ('Oscar', 'Best Director');
+insert into awards values ('Golden Globe', 'Best Actor');
+insert into awards values ('Oscar', 'Best Film');
+insert into awards values ('Filmfare', 'Best Actor');
+insert into awards values ('Golden Glode', 'Best Director');
+insert into awards values ('Oscar', 'Best Actor');
+insert into awards values ('Golden Globe', 'Best Film');
+insert into awards values ('Oscar', 'Budget producer');
+insert into awards values ('Filmfare', 'Best Director');
+insert into awards values ('Golden Glode', 'Best Film');
+
+
+CREATE TABLE Film_Genre(
+           movie_id varchar(5),
+           genre varchar(15),
+     	   primary key(movie_id,genre),
+           FOREIGN key (movie_id) REFERENCES movie(movie_id)
+          
+);
+
+insert into film_genre values( 'M1', 'Horror');
+insert into film_genre values( 'M1', 'Thriller');
+insert into film_genre values( 'M2', 'Action');
+insert into film_genre values( 'M3', 'Comedy');
+insert into film_genre values( 'M4', 'Romance');
+insert into film_genre values( 'M7', 'Horror');
+insert into film_genre values( 'M5', 'Thriller');
+insert into film_genre values( 'M6', 'Action');
+insert into film_genre values( 'M9', 'Comedy');
+insert into film_genre values( 'M4', 'Comedy');
+
+delete from film_genre where movie_id='M4';
+ /*2 rows affected.*/
+insert into film_genre values( 'M4', 'Comedy');
+insert into film_genre values( 'M4', 'Romance');
+ 
+
+/*ALTER TABLE 'film_genre' ADD PRIMARY KEY('genre');*/
+
+
+CREATE table Books(
+        book_id varchar(5),
+        Bookname varchar(50),
+        Authorname varchar(50),
+        Publishername varchar(50),
+        Pyear year(4),
+        primary key (book_id)
+);
+
+insert into books values('B0001', 'Harry Potter','J.K.Rowling','abc',2012);
+insert into books values('B0002', 'Hobbit','stan lee','abc',2012);
+insert into books values('B0003', 'X-men','stan lee','xyz',1999);
+insert into books values('B0004', 'Indiana Jones','stan lee','Tata',2000);
+insert into books values('B0005', 'Sherlock Holmes','stan lee','Mango',1990);
+insert into books values('B0006', 'Harry Potter','J.K.Rowling','abc',2012);
+insert into books values('B0007', 'Hobbit','stan lee','abc',2012);
+insert into books values('B0008', 'X-men','stan lee','xyz',1999);
+insert into books values('B0009', 'Indiana Jones','stan lee','Tata',2000);
+insert into books values('B0010', 'Sherlock Holmes','stan lee','Mango',1990);
+
+
+create table Author( 
+         ID varchar(5), 
+         Auname varchar(30), 
+         begindt date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+	 enddt date check (endyear > 01/01/1800 and endyear < 01/01/2100), DOB date check (DOB > 01/01/1800 and DOB < 01/01/2100), 
+         industry varchar(10), 
+         author_ranking int(3), 
+         Primary Key (ID) 
+); 
+
+insert into author values ( 'Aut1', 'Vinayak', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie', '21') ;
+insert into author values ( 'Aut2', 'Siddu', '1985/11/10', '1987/06/17', '1968/01/11', 'Movie', '13') ;
+insert into author values ( 'Aut3', 'Shashank', '1965/12/08', '1966/06/26', '1945/06/15', 'Literature', '21'); 
+insert into author values ( 'Aut4', 'Kuchib', '1973/11/07', '1975/06/25', '1955/05/08', 'Movie',  '27');
+insert into author values ( 'Aut5', 'Anil', '1964/08/06', '1965/06/15', '1940/11/02', 'Literature',  '18');
+insert into author values ( 'Aut6', 'Ajith', '1985/05/05', '1986/06/16', '1960/06/28', 'Movie', '21') ;
+insert into author values ( 'Aut7', 'Vijay', '1985/11/10', '1987/06/17', '1968/01/11', 'Movie', '13') ;
+insert into author values ( 'Aut8', 'Vivek', '1965/12/08', '1966/06/26', '1945/06/15', 'Literature', '21'); 
+insert into author values ( 'Aut9', 'Sunil', '1973/11/07', '1975/06/25', '1955/05/08', 'Movie',  '27');
+insert into author values ( 'Aut10', 'Sachin', '1964/08/06', '1965/06/15', '1940/11/02', 'Literature',  '18'); 
+
+
+CREATE TABLE Publisher(
+        publisher_id varchar(5),
+        pubname varchar(50),
+        begindt date check (beginyear > 01/01/1800 and beginyear < 01/01/2100), 
+        enddt date check (endyear > 01/01/1800 and endyear < 01/01/2100),
+        city varchar(20),
+        state varchar(20),
+        country varchar(20),
+        primary key (publisher_id)
+);
+
+insert into Publisher values ( 'Pub1', 'Anil', '1964/08/06', '1965/06/15',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub2', 'Ponil', '1973/11/07', '1975/06/25',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub3', 'Sunil', '1965/12/08', '1966/06/26',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub4', 'Hari', '1964/06/06', '1965/06/15',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub5', 'Das', '1965/12/08', '1966/06/26',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub6', 'Anil', '1964/08/06', '1965/06/15',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub7', 'Ponil', '1973/11/07', '1975/06/25',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub8', 'Sunil', '1965/12/08', '1966/06/26',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub9', 'Hari', '1964/06/06', '1965/06/15',  'Omaha', 'NE','USA'); 
+insert into Publisher values ( 'Pub10', 'Das', '1965/12/08', '1966/06/26',  'Omaha', 'NE','USA'); 
+ 
+
+create table Movie_actor( 
+        movie_id varchar(5), 
+        ID varchar(5), 
+        role varchar(50), 
+        primary key (movie_id, ID) 
+); 
+
+insert into movie_actor values('M1','A0001','Hero');
+
+insert into movie_actor values('M1','A0002','Heroine');
+
+insert into movie_actor values('M2','A0001','Hero');
+
+insert into movie_actor values('M3','A0003','Hero');
+
+insert into movie_actor values('M4','A0002','Hero');
+insert into movie_actor values('M6','A0001','Hero');
+insert into movie_actor values('M1','A0008','Heroine');
+insert into movie_actor values('M2','A0007','comedian');
+insert into movie_actor values('M9','A0003','Vilan');
+insert into movie_actor values('M10','A0002','Hero');
+
+
+create table Movie_award(
+       movie_id varchar(5),
+       award_name varchar(50), 
+       category varchar(50),
+       award_yr year(4),
+       primary key (movie_id, award_name, category)
+); 
+
+insert into movie_award values('M1','Oscar','Best Director',1995);
+insert into movie_award values('M4','Oscar','Best Actor',2000);
+insert into movie_award values('M3','Filmfare','Best Director',2005);
+insert into movie_award values('M1','Filmfare','Best Actor',1996);
+insert into movie_award values('M2','Golden Glode','Best Director',1999);
+insert into movie_award values('M6','Oscar','Best Director',1995);
+insert into movie_award values('M7','Oscar','Best Actor',2000);
+insert into movie_award values('M8','Filmfare','Best Director',2005);
+insert into movie_award values('M9','Filmfare','Best Actor',1996);
+insert into movie_award values('M10','Golden Glode','Best Director',1999);
+
+
+
+CREATE table Movie_books(
+       movie_id varchar(5),
+       book_id varchar(5),
+       primary key (movie_id, book_id)
+);
+
+insert into movie_books values( 'M1', 'B0001');
+insert into movie_books values( 'M1', 'B0003');
+insert into movie_books values( 'M2', 'B0002');
+insert into movie_books values( 'M4', 'B0005');
+insert into movie_books values( 'M5', 'B0004');
+insert into movie_books values( 'M6', 'B0001');
+insert into movie_books values( 'M1', 'B0007');
+insert into movie_books values( 'M2', 'B0008');
+insert into movie_books values( 'M9', 'B0005');
+insert into movie_books values( 'M5', 'B0010');
+
+
+CREATE table Books_Author(
+      book_id varchar(5),
+      ID varchar(5),
+      primary key (book_id, ID)
+);
+
+insert into books_author VALUES('B0001','Aut1');
+insert into books_author VALUES('B0001','Aut4');
+insert into books_author VALUES('B0002','Aut3');
+insert into books_author VALUES('B0002','Aut4');
+insert into books_author VALUES('B0003','Aut5');
+insert into books_author VALUES('B0006','Aut1');
+insert into books_author VALUES('B0007','Aut4');
+insert into books_author VALUES('B0002','Aut8');
+insert into books_author VALUES('B0002','Aut9');
+insert into books_author VALUES('B0007','Aut5');
+
+
+
+CREATE table Books_publisher(
+      book_id varchar(5),
+      publisher_ID varchar(5),
+      primary key (book_id, publisher_ID)
+);
+
+insert into books_publisher VALUES('B0001','Pub1');
+insert into books_publisher VALUES('B0002','Pub2');
+insert into books_publisher VALUES('B0002','Pub4');
+insert into books_publisher VALUES('B0003','Pub3');
+insert into books_publisher VALUES('B0005','Pub5');
+insert into books_publisher VALUES('B0006','Pub1');
+insert into books_publisher VALUES('B0002','Pub6');
+insert into books_publisher VALUES('B0002','Pub7');
+insert into books_publisher VALUES('B0007','Pub3');
+insert into books_publisher VALUES('B0005','Pub9');
+
+
+/*
+-------------------
+-------------------
+-------------------
+SECTION THREE
+-------------------
+-------------------
+-------------------
+*/
+/*SQL QUERIES, DESCRIPTION OF WHAT THEY ARE ACCOMPLISHING AND RESULTS PRODUCED BY THEM*/
+
+
+#QUERIES
+
+/*1) What are all the awards won by the movie M1?*/
+  
+    Select award_name
+    from movie_award
+    where movie_id='M1';
+/*
+
+  Showing rows 0 -  1 (2 total, Query took 0.0004 seconds.)
+
+          award_name
+          ----------	
+          Filmfare	
+          Oscar	
+
+*/
+
+
+/*2) List all the movies directed by a director X that belong to ‘Action’ genre.
+*/  
+  
+    select movie.movie_id , title
+    from movie,film_genre 
+    where movie.movie_id=film_genre.movie_id AND 
+          genre='Action' AND 
+          dir_id='D0002';  
+/*
+   showing rows 0 -  0 (1 total, Query took 0.0004 seconds.)
+
+                     M6	     Happy	
+*/
+
+
+/*3) Find the number of movies produced by each producer*/
+
+    select Pname,count(movie_id)
+    from movie,producer
+    where movie.prd_id=producer.id 
+    group by prd_id;
+/* 
+ Showing rows 0 -  6 (7 total, Query took 0.0005 seconds.)
+
+	Pname	    count(movie_id)
+        ---------------------------	
+	Neeharica	3	
+	Mona		1	
+	Lenin		2	
+	Bhagi		1	
+	Akila		1	
+	Vishal		1	
+	Naresh		1	
+*/
+
+
+/*4) Finding the names of directors, movies they directed and its title.*/
+
+select Dname as DirectorName,title as MovieName,Myear as YearofRelease 
+from movie right join director 
+on dir_id=director.id;
+ 
+/*
+Showing rows 0 - 11 (12 total, Query took 0.0005 seconds.)
+
+	DirectorName	MovieName	YearofRelease	
+	Ritesh		Harry Potter		2001	
+	Neehu		Happy			1990	
+	Neehu		Life is Beautiful	2007	
+	Neehu		Lion			1990	
+	Neehu		Nuvvu			2007	
+	Kaushik		Dhee			2000	
+	Kushal		Bommarillu		1992	
+	Kushal		HappyDays		2008	
+	Kushal		Arya			1992	
+	Navya		Null                    Null	
+	Sidhu		Null                    Null	
+	Bhuvana		Chirutha		2000	
+	Bala		Null	                Null
+	Kavya		Simha			2008	
+	Kittu		Null
+*/
+
+
+/*5) Find the count of movies with same genres
+*/ 
+    select genre, COUNT(genre) 
+    from film_genre 
+    group by genre 
+    having count(genre) >1 
+    order by count(genre) DESC; 
+
+/* Showing rows 0 -  3 (4 total, Query took 0.0005 seconds.)
+
+	genre	COUNT(genre)
+        --------------------	
+	Comedy	     3	
+	Horror	     2	
+	Thriller     2	
+	Action	     2	
+*/
+
+
+/*6) Find the names of director and producer of the movies*/
+
+    select title,dname,pname 
+    from producer p, director d, movie m 
+    where m.prd_id=p.ID AND 
+    d.ID=m.dir_id; 
+ 
+/* Showing rows 0 -  9 (10 total, Query took 0.0005 seconds.)
+
+	title	             dname	  pname	
+        ------------------------------------------
+	Happy	           Kaushik	Neeharica	
+	Bommarillu         Kavya	Mona	
+	Dhee	           Bhuvana	Neeharica	
+	HappyDays          Kavya	Lenin	
+	Life is Beautiful  Kaushik	Neeharica	
+	Lion	           Kaushik	Akila	
+	Arya	           Kavya	Vishal	
+	Chirutha	   Kushal	Naresh	
+	Simha	           Kittu	Lenin	
+	Manam	           Kaushik	Bhagi	
+*/
+
+
+
+/*
+7) Find the names of producers and directors whose career earnings are greater than 500000
+*/
+    select Dname 
+    from director 
+    where career_earnings>500000 
+    UNION 
+    select pname 
+    from producer 
+    where career_earnings>500000; 
+
+/* Showing rows 0 -  3 (4 total, Query took 0.0005 seconds.)
+
+	Dname
+        ------	
+	Kavya	
+	Kittu	
+	Bhagi	
+	Chethan	
+*/
+
+
+/*
+8)Find the names of directors and producers whose names begins with the letter 'S'
+*/  
+ 
+    select pname as Name 
+    from producer 
+    where pname like "s%" 
+    union 
+    select dname as Name 
+    from director 
+    where dname like "s%";
+
+/*Showing rows 0 -  1 (2 total, Query took 0.0004 seconds.)
+
+	Name
+        -----	
+	Suma	
+	Sidhu	
+*/
+
+
+/*
+9) Finding the number of awards won by each movie.
+*/
+    select movie.title,count(movie_award.award_name) as NumberOfAwards 
+    FROM movie, movie_award 
+    where movie.movie_id=movie_award.movie_id 
+    GROUP by movie.title; 
+
+/* Showing rows 0 -  8 (9 total, Query took 0.0005 seconds.)
+
+	title	     NumberOfAwards	
+	Arya	        1	
+	Bommarillu	1	
+	Chirutha	1	
+	Dhee	        1	
+	Happy	        2	
+	HappyDays	1	
+	Lion	        1	
+	Nuvvu	        1	
+	Simha	        1	
+
+*/
+
+
+/*10) Finding Producername, Title and year of release of movies.*/
+
+    select Pname as ProducerName,title as MovieName,Myear as YearofRelease
+    from movie inner join producer on 
+    prd_id=producer.id;
+
+/*   
+
+ Showing rows 0 - 10 (11 total, Query took 0.0005 seconds.)
+
+	ProducerName	MovieName		YearofRelease	
+	--------------------------------------------------------
+	Neeharica	Happy			1990	
+	Mona		Bommarillu		1992	
+	Neeharica	Dhee			2000	
+	Lenin		HappyDays		2008	
+	Neeharica	Life is Beautiful	2007	
+	Akila		Lion			1990	
+	Vishal		Arya			1992	
+	Naresh		Chirutha		2000	
+	Lenin		Simha			2008	
+	Bhagi		Nuvvu			2007	
+
+
+*/
+
+
+/*11) Finding the genre of each movie (As there is no Full outer join in Mysql I have used Right outer join Union Left Outer join to simulate Full Outer join)*/
+
+    select * 
+    from movie right outer join film_genre 
+    on movie.movie_id=film_genre.movie_id
+    UNION
+    select * 
+    from movie left outer join film_genre 
+    on movie.movie_id=film_genre.movie_id;
+
+/*
+ Showing rows 0 - 13 (14 total, Query took 0.0018 seconds.)
+
+
+
+	movie_id     title		Myear	rating	prd_id	dir_id	movie_id	genre	
+	----------------------------------------------------------------------------------------
+	M1	     Happy		1990	4	P0001	D0002	M1		Horror	
+	M1	     Happy		1990	4	P0001	D0002	M1		Thriller	
+	M2	     Bommarillu		1992	5	P0002	D0004	M2		Action	
+	M3	     Dhee		2000	5	P0001	D0003	M3		Comedy	
+	M4	     HappyDays		2008	4	P0003	D0004	M4		Comedy	
+	M4	     HappyDays		2008	4	P0003	D0004	M4		Romance	
+	M5	     Life is Beautiful	2007	3	P0001	D0002	M5		Thriller	
+	M6	     Lion		1990	4	P0006	D0002	M6		Action	
+	M7	     Arya		1992	5	P0007	D0004	M7		Horror	
+	M9	     Simha		2008	4	P0003	D0009	M9		Comedy	
+	M8	     Chirutha		2000	5	P0008	D0007	Null		Null		
+	M10	     Nuvvu		2007	3	P0004	D0002	Null		Null		
+	M11	     Harry Potter	2001	5	Null	D0001	Null		Null		
+	M12	     Guru		2017	4	Null	Null	Null		Null		
+
+*/
+
+
+/*
+12) Find all the book Ids that were published after year 2000 (Nested Query - Set Membership)*/
+
+    select book_id
+    from books 
+    where Bookname in (Select Bookname from books where Pyear >2000);
+
+/*
+ Showing rows 0 -  3 (4 total, Query took 0.0014 seconds.)
+
+
+	book_id	
+       ---------
+	B0001	
+	B0002		
+	B0006	
+	B0007	
+
+*/
+
+
+/*
+13) Find the names of actors who acted in more than 20 movies (Nested Query - Set Comparison)*/
+
+    select Aname
+    from actor 
+    where career_earnings > some
+    (select career_earnings from actor
+    where tot_mov_actd>20);
+
+/*
+ Showing rows 0 -  6 (7 total, Query took 0.0011 seconds.)
+
+	Aname	
+       ----------   
+	Vinayak	
+	Siddu	
+	Kuchib	
+	Anil	
+	Vinayak	
+	Vikky	
+	Kuchib	
+*/
+
+
+/*14)Finding the names of all the authors whose ranking is greater than those in industry Literature (Nested Query - Set Comparison)*/
+
+
+    select Auname as AuthorName
+    from author
+    where author_ranking < all (SELECT author_ranking 
+                               from author 
+                               where industry="Literature");
+
+/*
+  Showing rows 0 -  1 (2 total, Query took 0.0011 seconds.)
+
+	AuthorName
+	----------	
+	Siddu	
+	Vijay	
+*/
+
+/*15) Find the details of all the movies and their respective adaption based on books which have received awards (Nested Query-Testing for empty relation(exists))*/
+
+	select * 
+	from movie_books
+	where exists ( SELECT * 
+              from movie_award
+              WHERE movie_books.movie_id=movie_award.movie_id);
+
+/*
+  Showing rows 0 -  7 (8 total, Query took 0.0004 seconds.)
+
+	movie_id	book_id	
+        ------------------------
+	M1		B0001	
+	M1		B0003	
+	M1		B0007	
+	M2		B0002	
+	M2		B0008	
+	M4		B0005	
+	M6		B0001	
+	M9		B0005	
+*/
+
+
+/*16) Find the details of all the movies and their respective adaption based on books which have not received awards (Nested Query-Testing for empty relation(not exists))*/
+
+select * 
+from movie_books 
+where not exists ( SELECT * 
+			from movie_award 
+			WHERE movie_books.movie_id=movie_award.movie_id);
+/*
+ Showing rows 0 -  1 (2 total, Query took 0.0004 seconds.)
+
+	movie_id	book_id	
+        ------------------------
+	M5	 	B0004	
+	M5	 	B0010	
+*/
+
+
+/*17) Find the average career earnings of all the producers (Nested Query - From Clause)*/
+
+SELECT ce as AvgCareerEarnings from 
+(SELECT avg(career_earnings) as ce from producer) as t;
+
+/*
+ Showing rows 0 -  0 (1 total, Query took 0.0004 seconds.)
+
+	AvgCareerEarnings
+	------------------
+	295000	
+
+*/
+
+/*
+18) Find the name of actor who earns the maximum of all*/
+      
+      select Aname
+      from actor
+      where career_earnings=(select max(career_earnings)
+                       from actor);  
+
+/*
+    Showing rows 0 -  0 (1 total, Query took 0.0004 seconds.)
+
+                 Anil	
+*/
+
+/*19) Find the date of birth and name of the producer who has lowest career earnings*/
+          
+          select dob,pname
+          from producer
+          where career_earnings = (select min(career_earnings)
+                          from producer);
+
+/*
+   Showing rows 0 -  1 (2 total, Query took 0.0004 seconds.)
+
+	dob		pname
+        --------------------------	
+	1960-06-28	Neeharica	
+	1960-06-28	Akila	
+*/
+
+
+/*20) Find the names of publishers and books published by each of them.*/
+
+    select pubname,bookname  
+    from publisher, books_publisher, books
+    where books_publisher.publisher_ID=publisher.publisher_id
+    and books.book_id=books_publisher.book_id;
+
+/*
+
+ Showing rows 0 -  9 (10 total, Query took 0.0005 seconds.)
+
+
+	pubname	bookname	
+       ----------------------   
+	Anil	Harry Potter	
+	Ponil	Hobbit	
+	Hari	Hobbit	
+	Anil	Hobbit	
+	Ponil	Hobbit	
+	Sunil	X-men	
+	Das	Sherlock Holmes	
+	Hari	Sherlock Holmes	
+	Anil	Harry Potter	
+	Sunil	Hobbit	
+
+*/
+
+/*21) Finding the names of authors and books written by them*/
+
+    select bookname, authorname
+    from books_author,author,books
+    where books_author.ID=author.ID AND
+    books_author.book_id=books.book_id;
+
+/*
+ Showing rows 0 -  9 (10 total, Query took 0.0005 seconds.)
+
+	bookname	authorname
+       ------------------------------	
+	Harry Potter	J.K.Rowling	
+	Harry Potter	J.K.Rowling	
+	Hobbit		stan lee	
+	Hobbit		stan lee	
+	Hobbit		stan lee	
+	Hobbit		stan lee	
+	X-men		stan lee	
+	Harry Potter	J.K.Rowling	
+	Hobbit		stan lee	
+	Hobbit		stan lee	
+
+*/
+
+/*22) Find the roles of actors played in various movies */
+
+    select Aname,title,role
+    from actor,movie_actor,movie
+    where actor.ID=movie_actor.ID AND
+    movie.movie_id=movie_actor.movie_id;
+
+/*
+ Showing rows 0 -  6 (7 total, Query took 0.0005 seconds.)
+
+	Aname		title		role	
+       ----------------------------------------
+	Vinayak		Bommarillu	Hero	
+	Shashank	Dhee		Hero	
+	Siddu		HappyDays	Hero	
+	Vinayak		Lion		Hero	
+	Kalyan		Bommarillu	comedian	
+	Shashank	Simha		Vilan	
+	Siddu		Nuvvu		Hero	
+*/
+
+/*23) Find the number of books published by different publishers */
+
+    select pubname, count(book_id)
+    from publisher,books_publisher
+    where publisher.publisher_id=books_publisher.publisher_ID
+    GROUP by pubname;
+
+/*
+ Showing rows 0 -  4 (5 total, Query took 0.0005 seconds.)
+
+	pubname	count(book_id)	
+       -------------------------
+	Anil	3	
+	Das	1	
+	Hari	2	
+	Ponil	2	
+	Sunil	2	
+*/
+
+/*24) Find the number of  movies directed by different directors present */
+
+    SELECT dname,count(movie_id)
+    from director,movie
+    where director.ID=movie.dir_id
+    group by dname;
+
+/*
+ Showing rows 0 -  5 (6 total, Query took 0.0005 seconds.)
+
+	dname	count(movie_id)
+       --------------------------	
+	Bhuvana	1	
+	Kaushik	1	
+	Kavya	1	
+	Kushal	3	
+	Neehu	4	
+	Ritesh	1	
+ 
+*/
+
+/*25)Find the award winning movies that have 5 star rating. */
+
+    SELECT title as MovieName
+    from movie_award,movie
+    WHERE movie_award.movie_id=movie.movie_id
+    and rating = 5;
+/*
+ Showing rows 0 -  3 (4 total, Query took 0.0004 seconds.)
+
+	MovieName
+       ------------	
+	Bommarillu	
+	Dhee	
+	Arya	
+	Chirutha	
+
+*/
+
+
+/*
+Deletion Of Tuples:
+-------------------
+-------------------
+*/
+
+    delete from movie_actor
+    where movie_id='M1';
+
+/*
+3 rows affected. (Query took 0.0006 seconds.)
+
+--------------------------------------------------------------------------------------------------------------------
+*/
+
+/*
+Update of Tuples:
+-----------------
+-----------------
+
+*/
+
+    update actor
+    set career_earnings=100000
+    where id='A0010';
+ 
+/*1 row affected. (Query took 0.0005 seconds.)
+--------------------------------------------------------------------------------------------------------------------
+*/
+/*
+Insertion of tuples selected from one table into another table:
+---------------------------------------------------------------
+---------------------------------------------------------------
+*/
+
+   INSERT INTO producer SELECT * FROM Director where ID='D0001';
+
+/*1 row inserted. (Query took 0.0007 seconds.)*/
+
+/*Create View
+----------------------------------------------------------
+----------------------------------------------------------
+*/
+
+    create view MovieDetails AS
+    select m.Title as MovieName, p.Pname as ProducerName, d.Dname as DirectorName
+    from producer p, director d, movie m 
+    where m.prd_id=p.ID AND 
+    d.ID=m.dir_id; 
+
+
+
+    CREATE view MovieView AS
+    SELECT Movie_id, Title from movie;
+
+/*
+ MySQL returned an empty result set (i.e. zero rows). (Query took 0.0323 seconds.)
+ MySQL returned an empty result set (i.e. zero rows). (Query took 0.0387 seconds.)
+*/
+/*Update View
+----------------------------------------------------------
+----------------------------------------------------------
+*/
+
+    Update movieview set Movie_id = 'M0017'
+    where title = 'Guru';
+
+
+/*
+ 1 row affected. (Query took 0.0006 seconds.)
+*/
+
+/*Delete View
+----------------------------------------------------------
+----------------------------------------------------------
+*/
+
+drop view movieview;
+
+/*
+MySQL returned an empty result set (i.e. zero rows). (Query took 0.0017 seconds.)
+*/
+/*
+-------------------
+-------------------
+-------------------
+SECTION FOUR 
+-------------------
+-------------------
+-------------------
+*/
+/* ORIGINAL SQL SPECIFICATION SUBMITTED IN PHASE ONE */
+
+/*
+
+
+NOVEL BASED MOVIES DATABASE
+
+1. INTRODUCTION
+
+	Books are said to be our best friends and they often inspire and motivate us. Movies, on the other hand have been the most entertaining medium that can reach out to a common individual and enlightens him/her in its own way. However, film adaption has been a worldwide practice of film making that have been in existence since the earlier days of cinema dating back to 19th century.
+	 The purpose of the project to provide information on the movies that were filmed based on the several novels or books and their authors.
+
+SCOPE
+	To provide adequate information on the movies that were filmed based on the books.
+
+USER
+Any online movie or Book enthusiast who is interested in knowing the information related to the cast and crew of a movie or writings of his favorite author that were filmed into movies.
+
+2. DESCRIPTION
+
+The database system is informative driven movie database. The database consists of nine objects and the relationship between them such as Movie, Producer, Director, Actor, Genre, Award, Book, Author, and Publisher.
+
+User is provided with various selection criteria as a drop down list to narrow down for the movie information he is looking for based on the year of release, actor, director or producer. Once a criterion is submitted all the matches are displaced as results giving the user to further narrow down his search. 
+
+The types of queries that can be expected in this database system are as follows:
+
+1.	List all the movies that were filmed during a particular year based on the books.
+2.	List all the movies directed by a director X that belong to ‘Action’ genre.
+3.	What are all the awards won by the movie?
+4.	When did an actor start his career and how many movies did he act in till date?
+5.	The role played by the actor in the movie.
+6.	List all the earnings of the cast and crew that were part of the Movie ABC.
+
+All the above queries help the application to provide the user with different sets of information related to movies and books that inspired filming of those movies.
+
+3. DATABASE DESIGN
+
+a.	Movie table has the main details of the movie starting with the movie_id (is allocated to each movie), title, year, rating, pr_id (ID taken from the Producer table), dir_id (ID taken from the Director table).
+b.	Person table is the higher level entity for all the lower-level entity sets Actor, Director, Producer and Author. It has ID, name, begdt (career begin date), enddt (career end date), D.O.B (date of birth), industry (belongs to movie or book), age (calculated from the date of birth attribute).
+
+c.	Producer table has the details as ID, name, begdt (career begin date), enddt (career end date), D.O.B (date of birth), industry, age, career earnings, tot_mov_prd (total movies produced).
+
+d.	Director table has the details as ID, name, begdt (career begin date), enddt (career end date), D.O.B (date of birth), industry, age, career earnings, tot_mov_drctd (total movies directed).
+
+e.	Actor tables has the details as ID, name, begdt (career begin date), enddt (career end date), D.O.B (date of birth), industry, age, career earnings, tot_mov_acted(total movies acted).
+
+f.	The genre of the movie is represented by the table ‘Film_Genre’ consisting movie_id, genre associated with it.
+
+g.	Movie receives awards for various categories and is represented by table Award with attributes award_name (name of the award), category ( for which category the award was received ).
+
+h.	Books table has the details of all the books that were being made as films. It consists of book_id, title, author_Name, publisher_name, year.
+
+i.	Author table consists of ID, name, begdt (career begin date), enddt (career end date), D.O.B (date of birth), industry, age, career earnings, author_ranking (ranking for the author).
+
+j.	Publisher table conists of publisher_id (the publishing company id), name (name of the publisher), begdt (publishing begin date), enddt (last publishing date), city, state, country specifying the location of publisher.
+
+4. KEY DECISIONS
+
+a.	Assumption was made that only one movie can be filmed based on one book.
+
+b.	Every book has only one author and one publisher.
+
+c.	Each movie is being directed by only one director and produced by only one producer but may consists of many actors.
+
+d.	A person can only belong to one industry namely movie or book but not both.
+
+5. E-R MODEL AND RELATIONAL MODEL CORRESPONDENCE
+
+PRIMARY KEY AND MAPPING CARDINALITIES
+
+a.	Each movie in the movie table is uniquely represented by movie_id (primary key) that cannot be null. 
+
+b.	ID uniquely identifies an actor who can act in many movies and a movie can have multiple actors in various roles.
+
+c.	ID uniquely identifies a director who can direct many movies but a movie can only have one director.
+
+d.	ID uniquely identifies a producer who can produce many movies but a movie can only have one producer.
+
+e.	Awards are uniquely identified by composite key of Award name and category. A movie can receive multiple awards for various categories however a particular combination of award and category can only be given to one movie.
+
+f.	Film_Genre table has unique identifier formed by the combination of movie_id and genre. The reason being many movies can have the same genre and also any given movie can belong to multiple genres. Forming a composite key with the help of foreign key movie_id makes Film_Genre a weak entity.
+
+g.	Books are identified uniquely using book_id. A movie can only have one book as reference for film adaption and only one movie can be filmed out of a book.
+
+h.	ID uniquely identifies author. A book can have only one author whereas an author can have multiple books.
+
+i.	Publisher has publisher_id as unique identifier. A book can have only one publisher but publisher can publish more than one book.
+
+ENTITY RELATIONSHIP DESIGN
+
+1. The entity sets with attributes
+
+Movie:  (movie_id, title, year, rating, prd_id, dir_id, book_title).
+
+Person: (ID, name, begdt, enddt, D.O.B, industry, age ())
+
+Producer: (ID, name, begdt, enddt, D.O.B, industry, age (), career_earnings, tot_mov_prd)
+
+Director: (ID, name, begdt, enddt, D.O.B, industry, age (), career_earnings, tot_mov_drctd)
+
+Actor: (ID, name, begdt, enddt, D.O.B, industry, age (), career_earnings, tot_mov_acted)
+
+Awards: (award_name, category)
+
+Film_Genre: (movie_id, genre)
+
+Books: (book_id, title, year, sales)
+
+Author: (ID, name, begdt, enddt, D.O.B, industry, age(), author_ranking)
+
+Publisher: (publisher_id, name, begdt, enddt, city, state, country)
+
+2. The relationship set with attributes
+
+Movie_Actor: (movie_id,ID,role_name)
+
+Movie_Award: (movie_id, award_name, category, award_yr)
+
+Movie_Books: (movie_id, book_id)
+
+Books_Author: (book_id, ID)
+
+Books_Publisher: (book_id, publisher_id)
+
+PARTICIPATION CONSTRAINTS
+
+1.	The relationship set ‘Movie_Director’ is not considered as separate table as there is total participation from the movie to the director. It is a one to many relationship with total participation on many side (movie). Hence the ID attribute of director is included in movie entity and is denoted as dir_id.
+
+2.	The relationship set ‘Movie_Producer’ is not considered as separate table as there is total participation from the movie to the producer. It is a one to many relationship with total participation on many side (movie). Hence the ID attribute of producer is included in movie entity and is denoted as pr_id.
+
+WEAK ENTITY
+
+The relationship set ‘Movie_Genre’ between movie and film_genre tables is not considered to be separate as the later is considered as weak entity. Table film_genre is dependent on the movie_id attribute of movie table and forms a composite key using movie_id and genre attribute. This makes it a weak entity. 
+
+For example, a movie with movie_id ‘ABC’ belongs to two or more genres like drama, suspense and thriller. So, when we search for list of all movies that belong to one of those genres, for the movie ABC to be displayed among that list only possible way is to have a unique combination of movie_id and genre. The sample values table film_genre can take are as follows.
+
+1.	ABC, Suspense
+2.	ABC, Thriller
+3.	ABC, Drama
+
+SPECIALIZATION & GENERALIZATION
+
+The tables Actor, Director, Producer and Author are the lower level entity sets derived from the parent entity Person. The lower-level entity sets movie_cast_crew and author from Person entity are condition-defined or attribute-defined as they are split based on the attribute industry which can either be movie or book only. This also fulfills disjointness constraint as a person can belong to either of the industry but not both. 
+
+Movie_cast_crew is further specialized into actor, director and producer. But a person can belong to more than one table thus fulfilling the overlapping constraint in generalization.
+
+Completeness constraint is also applied on this generalization, as the higher-level entity is always present in the lower level entity sets. Hence it can be called as total generalization.
+
+
+*/
+
+
+/*
+-------------------
+-------------------
+-------------------
+SECTION FIVE 
+-------------------
+-------------------
+-------------------
+*/
+
+/*NO CHANGES WERE MADE FROM PHASE ONE*/
