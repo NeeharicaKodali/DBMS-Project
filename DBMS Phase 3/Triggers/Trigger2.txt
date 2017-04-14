@@ -1,0 +1,9 @@
+CREATE TRIGGER `delmovie` BEFORE DELETE on `movie` FOR EACH ROW 
+BEGIN 
+DECLARE msg varchar(255); 
+IF (select count(*) from Movie, Film_Genre where Movie.movie_id = Film_Genre.movie_id > 0 ) 
+THEN 
+SET msg = 'You cannot delete a Movie Record because its in Film_Genre'; 
+SIGNAL sqlstate 'CK001' SET message_text=msg; 
+END IF; 
+END 

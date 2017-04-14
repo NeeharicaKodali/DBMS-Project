@@ -1,0 +1,9 @@
+CREATE TRIGGER `MovieCountLessThanOne` BEFORE INSERT ON `Director` FOR EACH ROW 
+BEGIN 
+DECLARE msg varchar(255); 
+IF (NEW.tot_mov_drctd<1) 
+THEN 
+SET msg=('Needs to direct atleast one movie'); 
+SIGNAL sqlstate 'CK001' SET message_text=msg; 
+END IF; 
+End 
